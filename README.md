@@ -6,7 +6,7 @@ Windows + VS2019
 # Install dependency libraries
 Add OpenCV4.1.0 library
 # Use
-The VC ++ directory contains the "include" folder in the OpenCV library added by the directory, the library directory adds the "vc15\lib" folder in the OpenCV library, and adds "opencv_world410d.lib" in the additional dependencies entered by the property page linker.
+In the project property page,Add the "include" folder in the opencv library to the include directory of its VC + + column,the "VC15/lib" folder in opencv library is added to the Library Directory of its VC + + column。And add "opencv_world410d.lib"(If it's in Release mode,add "opencv_world410.lib" ) add the additional dependencies entered in the property page linker bar.Finally, the "opencv_world410d.dll" (If it's in Release mode,add "opencv_world410.dll" ) under the folder "vc15\bin" in the OpenCV library is placed in the generated directory(Debug Directory or Release Directory).
 # API
 |  Interface | Function  |
 | :------------: | :------------: |
