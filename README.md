@@ -4,7 +4,7 @@ Windows with UVC camera, you can preview, change resolution, get and change came
 # Environment
 Windows + VS2019
 # Install dependency libraries
-Add OpenCV4.1.0 library
+Add OpenCV4.1.0 library https://sourceforge.net/projects/opencvlibrary/files/4.1.0/opencv-4.1.0-vc14_vc15.exe/download
 # Use
 In the project property page,Add the "include" folder in the opencv library to the include directory of its VC + + column,the "VC15/lib" folder in opencv library is added to the Library Directory of its VC + + column。And add "opencv_world410d.lib"(If it's in Release mode,add "opencv_world410.lib" ) add the additional dependencies entered in the property page linker bar.Finally, the "opencv_world410d.dll" (If it's in Release mode,add "opencv_world410.dll" ) under the folder "vc15\bin" in the OpenCV library is placed in the generated directory(Debug Directory or Release Directory).
 # API
