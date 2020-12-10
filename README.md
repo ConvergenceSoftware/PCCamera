@@ -50,13 +50,20 @@ The VC ++ directory contains the "include" folder in the OpenCV library added by
 | 37 |  CAP_PROP_SETTINGS  | Pop up video/camera filter dialog (note: only supported by DSHOW backend currently. The property value is ignored  |
 | 39 |  CAP_PROP_AUTOFOCUS |  Auto Focus |
 | 44 | CAP_PROP_AUTO_WB  | white-balance color temperature  |
+  
 **Note**: When querying a property that is not supported by the backend used by the VideoCapture class, value 0 is returned.
 # Reference
 This example uses the OpenCV library to call the camera, this call part of the OpenCV API,details please visit https://docs.opencv.org /4.1.0 .
 # Contact us
 Email:
+
 software@cvgc.cn
+
 The official website:
+
 http://www.cvgc.cn/
+
 http://www.tipscope.com/
+
 https://www.tinyscope.com/
+
