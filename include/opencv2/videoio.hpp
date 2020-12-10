@@ -150,7 +150,7 @@ enum VideoCaptureProperties {
        CAP_PROP_RECTIFICATION =18, //!< Rectification flag for stereo cameras (note: only supported by DC1394 v 2.x backend currently).
        CAP_PROP_MONOCHROME    =19,
        CAP_PROP_SHARPNESS     =20,
-       CAP_PROP_AUTO_EXPOSURE =21, //!< DC1394: exposure control done by camera, user can adjust reference level using this feature.
+       CAP_PROP_AUTO_EXPOSURE =21, //!< exposure control done by camera, user can adjust reference level using this feature.
        CAP_PROP_GAMMA         =22,
        CAP_PROP_TEMPERATURE   =23,
        CAP_PROP_TRIGGER       =24,

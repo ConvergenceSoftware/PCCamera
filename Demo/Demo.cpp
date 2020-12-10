@@ -71,7 +71,7 @@ void print_control_info(ControlInfo* info)
 }
 
 /*
- * get a camera's properties
+ * Gets camera's properties
  *
  * See also:
  *
@@ -80,7 +80,7 @@ void print_control_info(ControlInfo* info)
  * PROPSETID_VIDCAP_CAMERACONTROL
  *     http://msdn2.microsoft.com/en-us/library/aa510754.aspx
  */
-HRESULT GetCameraRange(IBaseFilter* pBaseFilter,tagCameraControlProperty CameraControl, tagVideoProcAmpProperty VideoProcAmp,
+HRESULT Get_Camera_Range(IBaseFilter* pBaseFilter,tagCameraControlProperty CameraControl, tagVideoProcAmpProperty VideoProcAmp,
 	bool Use_IAMCameraControl = true, bool Use_IAMVideoProcAmp = true)
 {
 	HRESULT hr = 0;
@@ -155,7 +155,7 @@ void _FreeMediaType(AM_MEDIA_TYPE& mt)
 }
 
 //Gets camera support resolution
-vector<SIZE> CamCaps(IBaseFilter* pBaseFilter)
+vector<SIZE> Get_Camera_Resolutions(IBaseFilter* pBaseFilter)
 {
 	vector<SIZE> resolutions;
 	//vector<SIZE> modes;
@@ -247,7 +247,7 @@ vector<SIZE> CamCaps(IBaseFilter* pBaseFilter)
 */
 vector<SIZE> process_filter(IBaseFilter* pBaseFilter)
 {
-	return CamCaps(pBaseFilter);
+	return Get_Camera_Resolutions(pBaseFilter);
 }
 
 //Enumeration camera devices
@@ -307,7 +307,7 @@ vector<IBaseFilter*> Get_Camera_Filters()
 }
 
 //Gets the camera name and resolution
-map<string, vector<SIZE>> GetCameras()
+map<string, vector<SIZE>> Get_Cameras()
 {
 	std::map<string, vector<SIZE>> list;
 	int deviceCounter = 0;
@@ -362,7 +362,7 @@ map<string, vector<SIZE>> GetCameras()
 			}
 
 			//Gets the camera property range
-			//GetCameraRange(pFilter);
+			//Get_Camera_Range(pFilter);
 
 			//Get camera resolutions
 			vector<SIZE> resolutions = process_filter(pFilter);
@@ -404,7 +404,7 @@ map<string, vector<SIZE>> GetCameras()
 
 int main()
 {
-	map<string, vector<SIZE>> cameras_resolutions = GetCameras();
+	map<string, vector<SIZE>> cameras_resolutions = Get_Cameras();
 	CoUninitialize();
 
 	vector<string> cameras;
@@ -432,8 +432,8 @@ int main()
 	}	
 
 	vector<IBaseFilter*> filters = Get_Camera_Filters();
-	//GetCameraRange(filters[index], CameraControl_Focus, VideoProcAmp_Brightness,true,true);
-	GetCameraRange(filters[index], CameraControl_Focus, VideoProcAmpProperty(NULL),true,false);
+	//Get_Camera_Range(filters[index], CameraControl_Focus, VideoProcAmp_Brightness,true,true);
+	Get_Camera_Range(filters[index], CameraControl_Focus, VideoProcAmpProperty(NULL),true,false);
 
 	//Get the video stream
 	namedWindow("Win10x64", WINDOW_NORMAL);
