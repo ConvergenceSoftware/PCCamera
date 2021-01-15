@@ -23,7 +23,7 @@ In the project property page,Add the "include" folder in the opencv library to t
 | VideoCapture::get(int propId)  | Returns the specified VideoCapture property  |
 | VideoCapture::set(int propId, double value) | Sets a property in the VideoCapture |
 | imread(const string& filename, int flags=1 )  | Loads an image from a file.  |
-|  mwrite(const string& filename, InputArray image, const vector<int>& params=vector<int>() ) | Saves an image to a specified file.  |
+|  imwrite(const string& filename, InputArray image, const vector<int>& params=vector<int>() ) | Saves an image to a specified file.  |
 |  VideoCapture::release() | Closes video file or capturing device.  |
 # OpenCV支持相机控制项
 |  propId | propName  |  Function |
